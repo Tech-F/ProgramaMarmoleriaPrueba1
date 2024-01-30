@@ -1,16 +1,14 @@
 package Interfaz;
 
+import Materiales.Materiales;
 import Materiales.TarifaProductos;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
-import java.awt.*;
-import java.awt.Button;
-import java.awt.TextArea;
-import java.awt.TextField;
+import java.util.List;
 
 public class InterfazMateriales extends Application {
     private TarifaProductos tarifa = new TarifaProductos();
@@ -72,7 +70,7 @@ public class InterfazMateriales extends Application {
         double precio = Double.parseDouble(precioField.getText());
         String ubicacion = ubicacionField.getText();
 
-        Materiales nuevoMaterial = new Materiales(codigo, color, tipo, precio, nombre, ubicacion);
+        Materiales nuevoMaterial = new Materiales(codigo, color, tipo, precio, nombre, ubicacion,precio);
         tarifa.agregarMaterial(nuevoMaterial);
 
         // Limpiar campos después de agregar
